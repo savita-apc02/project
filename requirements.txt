@@ -1,3 +1,5 @@
-moviepy==1.0.3
+moviepy
 Flask==3.0.0
 gunicorn
+
+
