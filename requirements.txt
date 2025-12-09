@@ -1,5 +1,7 @@
-moviepy
-Flask==3.0.0
-gunicorn
+moviepy==1.0.3
+Flask==3.1.2
+gunicorn==23.0.0
+
+
 
 
