@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template
-from moviepy.editor import VideoFileClip
 import os
+import subprocess
 
 app = Flask(__name__)
 
@@ -14,15 +14,21 @@ def home():
         filepath = os.path.join("uploads", file.filename)
         file.save(filepath)
 
-        clip = VideoFileClip(filepath)
-        output = filepath.rsplit(".", 1)[0] + ".mp3"
-        clip.audio.write_audiofile(output)
+        output_path = os.path.join("uploads", "output.mp4")
 
-        return f"Converted Successfully! Saved as: {output}"
+        # FFmpeg command run
+        command = [
+            "ffmpeg",
+            "-i", filepath,
+            "-vf", "scale=204:360",
+            output_path
+        ]
+
+        subprocess.run(command)
+
+        return f"Video saved: {output_path}"
 
     return render_template("index.html")
 
 if __name__ == "__main__":
     app.run()
-
-
