@@ -1,6 +1,3 @@
 Flask
 gunicorn
-moviepy
-imageio
-imageio-ffmpeg
 ffmpeg-python
