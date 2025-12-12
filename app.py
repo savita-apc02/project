@@ -16,7 +16,6 @@ def home():
 
         output_path = os.path.join("uploads", "output.mp4")
 
-        # FFmpeg command run
         command = [
             "ffmpeg",
             "-i", filepath,
