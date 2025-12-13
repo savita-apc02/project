@@ -1,7 +1,7 @@
 import os
 from tkinter import *
 from tkinter import filedialog, messagebox
-from moviepy.editor import VideoFileClip
+from moviepy import VideoFileClip
 
 def select_video():
     file = filedialog.askopenfilename(
@@ -80,3 +80,4 @@ Button(
 ).pack(pady=20)
 
 root.mainloop()
+
