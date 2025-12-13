@@ -1,3 +1,4 @@
-Flask
-gunicorn
-ffmpeg-python
+moviepy
+imageio
+imageio-ffmpeg
+
